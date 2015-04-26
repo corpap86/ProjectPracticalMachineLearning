@@ -1,0 +1,29 @@
+Description Final Project – Corrado Paparella
+
+
+After loading training and test data set, the first action that I think is useful is to pre-process the data. 
+The pre-process data is made up of several actions:
+-	I tried to understand better the meaning of the data and I cleaned all part of data set not useful for the classification, like NA o empty columns or rows with the average of previous sample. 
+-	I have deleted all variables with nearZeroVariance because will not influence the result of the prediction 
+
+Then I used the cross validation method in order to estimate the out of sample error before to apply to the original test data set.
+
+I used the Hold-out and k-folds cross validation to understand if it gave to me some improvements. As we can see on the following Figure, there are no improvement. This is justified because we have available a very large samples.  In this case the example shown, is applied only to the random forest method
+
+
+#apply random forest with hold-out cross validation --> Accuracy : 0.9871
+#cross validation with k-fold, k large = 20 -->   Accuracy : 0.9838                                           
+#cross validation with k-fol, k small = 3 --> Accuracy : 0.9854          
+
+After that, I trained the algorithm with different methods, like random forest, linear discriminant analysis and Trees based model. They are the mainly used with factor variables.  I didn’t try any linear model because there are too many variables and they don’t work well in this case.
+
+Random Forest --> Accuracy : 0.9871
+Linear Discriminant Analysis --> Accuracy : 0.697         
+Trees based model --> Accuracy : 0.4229
+
+The out of sample error rate is 1 – Accuracy of the random forest method= 0.0129.
+
+PREDICTION
+Finally I choose the best one (Random Forest) and I have applied it to the original test data set, obtaining the following predictions. 
+ 
+B A B A A E D B A A B C B A E E A B B B
